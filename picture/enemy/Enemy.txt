@@ -1,0 +1,17 @@
+No.1
+Name: Soldier Cat
+Blood: 100
+Speed: 10-20
+Skill: Have the loyalty to the empire, normal speed and low blood.
+*************************************************************************
+No.2
+Name: Magic Iris Cat//幻步喵
+Blood: 140
+Speed: 15-25
+Skill: 躲避功能，在躲避后会瞬移一段距离
+*************************************************************************
+No.3
+Name: Scar cat
+Blood: 200
+Speed: 18
+Skill: 血厚，可以给一定范围内的

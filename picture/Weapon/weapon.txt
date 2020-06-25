@@ -1,0 +1,18 @@
+No.1
+Name: 
+AttackRange:30 40 40
+fireInterval:
+coolDown:
+Skill: Have the loyalty to the empire, normal speed and low blood.
+*************************************************************************
+No.2
+Name: Magic Iris Cat
+Blood: 140
+Speed: 20
+Skill: 
+*************************************************************************
+No.3
+Name: Scar cat
+Blood: 200
+Speed: 8
+Skill: 

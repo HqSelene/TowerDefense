@@ -1,0 +1,55 @@
+<RCC>
+    <qresource prefix="/">
+        <file>picture/backLogin.jpg</file>
+        <file>picture/Button.jpg</file>
+        <file>picture/5.jpg</file>
+        <file>picture/Button2.jpg</file>
+        <file>picture/MapChose.jpg</file>
+        <file>picture/planet 1.png</file>
+        <file>picture/planet.png</file>
+        <file>picture/planet2.png</file>
+        <file>picture/planet4.png</file>
+        <file>picture/enemy/1/01_01.jpg</file>
+        <file>picture/enemy/1/01_02.jpg</file>
+        <file>picture/enemy/1/01_03.jpg</file>
+        <file>picture/enemy/1/01_04.jpg</file>
+        <file>picture/enemy/2/05_01.jpg</file>
+        <file>picture/enemy/2/05_02.jpg</file>
+        <file>picture/enemy/2/05_03.jpg</file>
+        <file>picture/enemy/2/05_04.jpg</file>
+        <file>picture/coin.png</file>
+        <file>picture/stone.png</file>
+        <file>picture/Weapon/1/base1n.png</file>
+        <file>picture/Weapon/1/base2n.png</file>
+        <file>picture/Weapon/1/base3n.png</file>
+        <file>picture/enemy/red blood.jpg</file>
+        <file>picture/enemy/white blood.jpg</file>
+        <file>picture/SmallWeapon.png</file>
+        <file>picture/button3.png</file>
+        <file>picture/ins.png</file>
+        <file>picture/Weapon/2/WB_base_d0.png</file>
+        <file>picture/Weapon/2/WB_baseu2_d0.png</file>
+        <file>picture/Weapon/2/WB_baseu3_d0.png</file>
+        <file>picture/Weapon/1/bullet1.PNG</file>
+        <file>picture/Weapon/2/bullet2.png</file>
+        <file>picture/ending.jpg</file>
+        <file>picture/music/Maksim Mrvica.mp3</file>
+        <file>picture/music/Beethoven Virus.mp3</file>
+        <file>picture/music/403014__inspectorj__ui-confirmation-alert-b4.wav</file>
+        <file>picture/music/403019__inspectorj__ui-confirmation-alert-c4.wav</file>
+        <file>picture/map/map1.png</file>
+        <file>picture/music/403009__inspectorj__ui-confirmation-alert-b3.wav</file>
+        <file>picture/enemy/4/29_00.png</file>
+        <file>picture/enemy/4/29_01.png</file>
+        <file>picture/enemy/4/29_02.png</file>
+        <file>picture/enemy/4/29_03.png</file>
+        <file>picture/cat2.png</file>
+        <file>picture/Name.png</file>
+        <file>picture/NameEdit.png</file>
+        <file>picture/music/The Dawn.mp3</file>
+        <file>picture/enemy/5/10_01.png</file>
+        <file>picture/enemy/5/10_02.png</file>
+        <file>picture/enemy/5/10_03.png</file>
+        <file>picture/enemy/5/10_04.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,56 @@
+
+游戏背景：
+公元3030年，地球毁灭，人类不甘灭亡，想要通过时空跳跃寻找其他星球，白泽将军（也就是你）在人类发现的唯一一颗适宜人类居住的星球上管理军队，你承载者人类生的希望。然而，某一天，来自饕餮星系的猫咪军团却想要争夺这个星球，他们是可爱、嗜血的矛盾结合体，在人类普遍吸猫的时代，你能够留住人类最后的希望吗？
+
+
+已实现功能：
+地图选项
+产生敌军并行走
+造塔
+目前点击一下:造塔
+
+最终目标功能：
+选择关卡，地图和闯关之间无缝衔接
+敌军可以躲避或攻击
+可以选择塔，并拆塔
+塔可以攻击
+可以存档，读档
+
+猫咪军团：
+No.1
+Name: Soldier Cat
+Blood: 100
+Speed: 10
+Skill: Have the loyalty to the empire, normal speed and low blood.
+******************************************************
+No.2
+Name: Magic Iris Cat
+Blood: 140
+Speed: 20
+Skill: 
+******************************************************
+No.3
+Name: Scar cat
+Blood: 200
+Speed: 8
+Skill: 
+
+白泽军团：
+No.1
+Name: 
+AttackRange:30 40 40
+fireInterval:
+coolDown:
+Skill: Have the loyalty to the empire, normal speed and low blood.
+******************************************************
+No.2
+Name: Magic Iris Cat
+Blood: 140
+Speed: 20
+Skill: 
+******************************************************
+No.3
+Name: Scar cat
+Blood: 200
+Speed: 8
+Skill: 
