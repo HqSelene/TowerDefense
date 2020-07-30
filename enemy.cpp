@@ -25,8 +25,9 @@ void Blood::show(QPainter(* painter))
     painter->drawText(textRect, Qt::AlignCenter, Str);
 }
 
-enemy::enemy(int num):Object(0,0,ENEMY,ENEMY),win(false),nowPath(1),damage(0),Miss(0),skillReady(false)
+enemy::enemy(int num):Object(0,0,ENEMY,ENEMY),win(false),nowPath(1),damage(0),skillReady(false)
 {
+    setID(num);
     object=new QPixmap;
     blood=new Blood;
     setID(num);
@@ -38,7 +39,7 @@ enemy::enemy(int num):Object(0,0,ENEMY,ENEMY),win(false),nowPath(1),damage(0),Mi
     {
         case 1:
         {
-            ID=1;
+
             coin=15;
             attackAbility=1;
             nowBlood=fullBlood=100;
@@ -48,40 +49,54 @@ enemy::enemy(int num):Object(0,0,ENEMY,ENEMY),win(false),nowPath(1),damage(0),Mi
         break;
     case 2:
     {
-        ID=2;
         coin=20;
         attackAbility=1;
         nowBlood=fullBlood=130;
         speed=2.5;
         object->load("://picture/enemy/2/05_01.jpg");
-        cooldown=skillInterval=25;
+        cooldown=skillInterval=ENEMY2_INT;
     }
         break;
     case 3:
     {
-        ID=3;
         coin=30;
         attackAbility=2;
         nowBlood=fullBlood=120;
         speed=6;
+        cooldown=skillInterval=ENEMY3_INT;
         object->load("://picture/enemy/4/29_00.png");
     }
         break;
     case 4:
     {
-        ID=4;
         coin=40;
         attackAbility=3;
         nowBlood=fullBlood=200;
         speed=2;
+        cooldown=skillInterval=ENEMY4_INT;
         object->load("://picture/enemy/5/10_01.png");
     }
     }
 }
 
+void enemy::attack(double bl)
+{
+    if(bl<0)
+    {
+        Obx-=bl;
+        nowBlood+=bl/2;
+        return;
+    }
+    nowBlood-=bl;
+    if(nowBlood<=0)
+    {
+        damage=true;
+    }
+}
+
 void enemy::setObject(int st){
     st=st%4;
-    switch(ID)
+    switch(getID())
     {
     case 1:{
         switch(st)
@@ -163,7 +178,6 @@ void enemy::setObject(int st){
 void enemy::show(QPainter* painter){
     //应该要先移动再画
 
-    SetSkill();
     painter->drawPixmap(Obx-wid/2,Oby-hei/2,wid,hei,*object);
 
     blood->setValue(100*nowBlood/fullBlood);
@@ -175,72 +189,13 @@ void enemy::show(QPainter* painter){
     blood->fillRect.moveTo(Obx-BLOODWIDE/2,Oby-40);
     blood->textRect=QRect(Obx-BLOODWIDE/2,Oby-75,60,15);
     blood->show(painter);
-
 }
 
-void enemy::attack(double bl)
-{
-    if(bl<0)
-    {
-        Obx-=bl;
-        nowBlood+=bl/2;
-        return;
-    }
-    if(ID==2)
-    {
-        if(isSkillReady())
-        {
-            Miss=1;
-            skillCool();
-            return;
-        }
-    }
-    nowBlood-=bl;
-    if(nowBlood<=0)
-    {
-        damage=true;
-    }
 
-}
 void enemy::CoolDown(){//冷却
-    if(Miss!=0)
-        return;
     cooldown =cooldown- 1.0/INTERVAL;
-    if(cooldown < 0 ){
+    if(cooldown < 0&&skillReady==false){
         skillReady = true;
         cooldown = skillInterval;
-    }
-}
-
-void enemy::SetSkill()
-{
-    switch(ID)
-    {
-    case 1:
-        break;
-    case 2:
-    {
-        if(Miss!=0)
-        {
-            if(Miss==1)
-            {
-                Oby-=20;
-                Obx-=40;
-            }
-            Miss++;
-        }
-        else if(Miss==15)
-        {
-            Oby+=20;
-            Miss=0;
-            cooldown = skillInterval;
-        }
-    }
-        break;
-    case 3:
-    {
-
-    }
-        break;
     }
 }

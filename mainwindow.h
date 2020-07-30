@@ -17,7 +17,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void paintEvent(QPaintEvent* );
+    void paintEvent(QPaintEvent*e);
 
 private slots:
     void on_pushButton_clicked();
@@ -30,7 +30,6 @@ signals:
 private:
     QMediaPlayer *backgroundMusic;
     QMediaPlayer *button1;
-    //QMediaPlaylist *musckList;
 
     Ui::MainWindow *ui;
     MapChoice* window;

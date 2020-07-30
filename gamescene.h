@@ -1,13 +1,13 @@
 #ifndef GAMESCENE_H
 #define GAMESCENE_H
-#include "enemy.h"
+#include "diversifyemy.h"
 #include "weapon.h"
 #include "map.h"
 #include "object.h"
 #include "QMouseEvent"
 #include "skill.h"
 
-class gameScene:public Object
+class gameScene
 {
 public:
     static int st;
@@ -15,7 +15,7 @@ public:
     void setScene(int n);
     void show(QPainter* painter);
 
-    void SingleClick(QMouseEvent* e);//处理鼠标点击的
+     void SingleClick(QMouseEvent* e);//处理鼠标点击的
      void setTower(QKeyEvent*e);
      void deleteTower();
 
@@ -28,6 +28,7 @@ public:
     void Move();//使子弹、敌人移动
     void Check();//确认删除已经死亡或者无效的技能
     void CreateSkill();//发动攻击
+    void SkillOfEnemy();
 
     bool ifWin(){return winOfHuman;}
     bool isWarEnd(){return WarNotEnd;}
@@ -36,7 +37,7 @@ public:
 
 private:
     QVector<Weapon*> towers;//防御塔列表（已激活）
-    QVector<enemy*> enemies;//敌人容器
+    QVector<diversifyEmy*> enemies;//敌人容器
     QVector<Skill*> skills;
     QVector<QPointF*> processTower;
 

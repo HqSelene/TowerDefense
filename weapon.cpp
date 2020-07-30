@@ -26,7 +26,7 @@ Weapon::Weapon(int num,int mouse_x,int mouse_y):Object(mouse_x,mouse_y,WEAPON,WE
         levelCoin=new int[3]{62,80,98};
         attackRange=new double[3]{WEAPON_RANGE_2,WEAPON_RANGE_2+50,WEAPON_RANGE_2+50};
         fireInterval=new double[3]{WEAPON_INTERVAL_2,WEAPON_INTERVAL_2-0.02,WEAPON_INTERVAL_2-0.04};
-        injury=new int[3]{-30,45,60};
+        injury=new int[3]{-30,-45,-60};
         object->load("://picture/Weapon/2/WB_base_d0");
         levelWeapon=new QPixmap[2];
         levelWeapon[0].load("://picture/Weapon/2/WB_baseu2_d0.png");

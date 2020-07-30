@@ -1,9 +1,8 @@
 #include "skill.h"
 
-Skill::Skill(int num,QPointF tar,Weapon* a):Object(a->getPos().x(),a->getPos().y(),SKILL,SKILL),target(tar),damage(false)
+Skill::Skill(int num,QPointF tar,Weapon* a):Object(a->getPos().x(),a->getPos().y(),SKILL,SKILL),damage(false),object_ID(num),target(tar)
 {
     length=0;
-    object_ID=num;
     switch (num)
     {
     case 1:
@@ -31,20 +30,20 @@ Skill::Skill(int num,QPointF tar,Weapon* a):Object(a->getPos().x(),a->getPos().y
 
 }
 
-void Skill::show(QPainter *p)
+void Skill::show(QPainter *painter)
 {
-    p->drawPixmap(getPos().x()-SKILL/2,getPos().y()-SKILL/2,wid,hei,*object);
+    painter->drawPixmap(getPos().x()-SKILL/2,getPos().y()-SKILL/2,wid,hei,*object);
 }
 
 void Skill::move()
 {
-    length+=speed;
-    this->setPos(getPos().x()+speed*cosx,getPos().y()+speed*sinx);
-    if(length>range)
+    length+=speed;//总路程增加
+    this->setPos(getPos().x()+speed*cosx,getPos().y()+speed*sinx);//通过之前已经计算好的位移方向行走
+    if(length>range)//如果超出攻击范围，则毁灭子弹
     {
         damage=true;
     }
-    if((cosx>=0&&getPos().x()>target.x())||(cosx<=0&&getPos().x()<target.x()))
+    if((cosx>=0&&getPos().x()>target.x())||(cosx<=0&&getPos().x()<target.x()))//如果子弹到达了之前攻击对象所在位置，也毁灭子弹
     {
         damage=true;
     }

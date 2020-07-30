@@ -18,12 +18,13 @@ public:
     bool getDM(){return damage;}
 
     void setDamage(){damage=true;}
-    void show(QPainter* p);
+    void show(QPainter* painter);
     void move();
-protected:
-    bool damage;
 
-    int object_ID;
+private:
+    const int object_ID;
+
+    bool damage;
     int damageAB;
     double cosx,sinx;
     int speed;

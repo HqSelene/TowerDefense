@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include "gamescene.h"
 #include "QMouseEvent"
-
+#include "QMediaPlayer"
 namespace Ui {
 class gaming;
 }
@@ -16,7 +16,7 @@ class gaming : public QMainWindow
 public:
     explicit gaming(int n,QWidget *parent = nullptr);
     ~gaming();
-    void paintEvent(QPaintEvent*);
+    void paintEvent(QPaintEvent*e);
 
 protected:
     void keyPressEvent(QKeyEvent* e);
@@ -33,10 +33,13 @@ private:
     QTimer* timer;
     static int time;
 
+    QMediaPlayer* Victory;
+    QMediaPlayer* Loss;
+    QMediaPlayer* background;
+
 private slots:
     void run();
     void create();
-
     void on_pushButton_clicked();
     void on_pushButton_2_clicked();
     void on_pushButton_3_clicked();

@@ -26,6 +26,19 @@ gaming::gaming(int n,QWidget *parent) :
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
     connect(timer, SIGNAL(timeout()), this, SLOT(run()));
     connect(TCreateEnemy, SIGNAL(timeout()), this, SLOT(create()));
+
+    background=new QMediaPlayer;
+    background->setMedia(QUrl("qrc:/picture/music/The Dawn.mp3"));
+    background->setVolume(50);
+    background->play();
+
+    Loss=new QMediaPlayer;
+    Loss->setMedia(QUrl("qrc:/picture/music/415209__inspectorj__cat-screaming-a.wav"));
+    Loss->setVolume(50);
+
+    Victory=new QMediaPlayer;
+    Victory->setMedia(QUrl("qrc:/picture/music/466133__humanoide9000__victory-fanfare.wav"));
+    Victory->setVolume(50);
 }
 
 gaming::~gaming()
@@ -54,25 +67,32 @@ void gaming::keyPressEvent(QKeyEvent *e)
 }
 
 
-void gaming::paintEvent(QPaintEvent *)
+void gaming::paintEvent(QPaintEvent *e)
 {
-    if(!world.isWarEnd())
+    if(!world.isWarEnd()&&!world.ifWin())
     {
-        QMessageBox message(QMessageBox::NoIcon,"Warn", "YOU FAILED!    HUMAN WILL DIE SOON");
+        background->stop();
+        Loss->play();
         TCreateEnemy->stop();
         timer->stop();
-        message.setIconPixmap(QPixmap("://picture/ending.jpg"));
+        QMessageBox message(QMessageBox::NoIcon,"Warn", "YOU FAILED!    HUMAN WILL DIE SOON");
+        message.setIconPixmap(QPixmap("://picture/bad_end.jpg"));
         message.exec();
+        Loss->stop();
         emit sendsignal();
         this->close();
     }
-    else if(world.ifWin())
+    else if(world.ifWin()&&!world.isWarEnd())
     {
-        QMessageBox message(QMessageBox::NoIcon,"Warn", "You WIN!  Let go to the next battlefield");
+        background->stop();
+        Victory->play();
         TCreateEnemy->stop();
         timer->stop();
-        message.setIconPixmap(QPixmap("://picture/ending.jpg"));
+        QMessageBox message(QMessageBox::NoIcon,"Warn", "You WIN!  Let go to the next battlefield");
+
+        message.setIconPixmap(QPixmap("://picture/happy_end.jpg"));
         message.exec();
+        Victory->stop();
         emit sendsignal();
         this->close();
     }
@@ -91,6 +111,7 @@ void gaming::run()
     gameScene::st++;
     if(!world.isWarEnd())
     {
+        background->stop();
         TCreateEnemy->stop();
         timer->stop();
     }
@@ -103,9 +124,10 @@ void gaming::create()
 
 void gaming::on_pushButton_clicked()
 {
-    QMessageBox::StandardButton rb = QMessageBox::question(NULL, "Delete", "Do you want to cak to the map?", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+    QMessageBox::StandardButton rb = QMessageBox::question(NULL, "Delete", "Do you want to bak to the map?", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
     if(rb==QMessageBox::Yes)
     {
+        background->stop();
         emit sendsignal();
         this->close();
     }
@@ -119,6 +141,7 @@ void gaming::on_pushButton_2_clicked()
     {
         TCreateEnemy->stop();
         timer->stop();
+        background->stop();
         QApplication* app;
         app->exit(0);
     }

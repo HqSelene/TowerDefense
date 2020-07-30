@@ -1,18 +1,13 @@
 No.1
-Name: 
-AttackRange:30 40 40
-fireInterval:
-coolDown:
-Skill: Have the loyalty to the empire, normal speed and low blood.
+levelCoin:50 65 80
+AttackRange:600 650 700
+fireInterval:1
+Injury:10 12 14
+Skill: 发动攻击快，且杀伤力较大，射程更远
 *************************************************************************
 No.2
-Name: Magic Iris Cat
-Blood: 140
-Speed: 20
-Skill: 
-*************************************************************************
-No.3
-Name: Scar cat
-Blood: 200
-Speed: 8
-Skill: 
+levelCoin:62 80 98
+AttackRange:400 450 500
+fireInterval:1.2
+injury:-30 -45 -60
+Skill: 发动攻击慢，杀伤力小，可以使敌人后退一段距离

@@ -27,4 +27,10 @@
 
 #define MAP_1 1.4
 
+#define ENEMY2_SKILL_BLOOD 10
+
+#define ENEMY2_INT 20
+#define ENEMY3_INT 22
+#define ENEMY4_INT 18
+
 #endif // DATA_H

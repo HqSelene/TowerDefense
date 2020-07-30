@@ -16,11 +16,9 @@ public:
     int getlevel(){return level;}
     double getrange(){return attackRange[level];}
     int getInjury(){return injury[level];}
-    //void handleCoolDown();//此功能可以移交Scene也可以不移交
     void fireCool(){fireReady = false;cooldown = fireInterval[level];}//开火后重置属性
 
-   // void setIsFireReady(bool re){fireReady = re;}
-
+    void setDamage(){damage=true;}
     bool isFireReady(){return fireReady;}//判断是否可以开火
     void upLevel();//升级并判断是否成功
     void CoolDown();

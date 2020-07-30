@@ -21,17 +21,11 @@ class Map:public Object
 public:
     Map(int num=0);
     void setPath(int n);
-
-    //void chooseWeapon();
-
-    //void setTower();
-    //?
     int* allAttack;//分别代表敌人种类数量，进攻波数目，每一波的数量
+    QVector<strPath> getPaths(){return paths;}
+    int getNumPath(){return nPath;}
 
-    friend class enemy;
-    friend class gameScene;
-protected:
-
+private:
     QVector<strPath> paths;//路线
     int nPath;//路有几条呢
     int startMoney;

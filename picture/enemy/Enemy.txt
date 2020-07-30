@@ -1,17 +1,31 @@
 No.1
-Name: Soldier Cat
+Name: Soldier
 Blood: 100
-Speed: 10-20
-Skill: Have the loyalty to the empire, normal speed and low blood.
+Speed: 2
+attackAbility: 1
+Description: Have the loyalty to the empire, normal speed and low blood.
+Skill: 无
 *************************************************************************
 No.2
-Name: Magic Iris Cat//幻步喵
-Blood: 140
-Speed: 15-25
-Skill: 躲避功能，在躲避后会瞬移一段距离
+Name: Wizard
+Blood: 130
+Speed: 2.5
+attackAbility: 1
+Description: Very smart, has mysterious powers.
+Skill: 能够回血，每次恢复10滴血。
 *************************************************************************
 No.3
-Name: Scar cat
+Name: Rollings cat
+Blood: 120
+Speed: 6
+attackAbility: 2
+Description: Reckless and powerful
+Skill: 消灭攻击范围内的塔，一次只能消灭一座塔
+*************************************************************************
+No.4
+Name: Cat King
 Blood: 200
-Speed: 18
-Skill: 血厚，可以给一定范围内的
+Speed: 2
+attackAbility: 3
+Description: He can an command the wind
+Skill: 使技能范围内的所有敌人瞬移一段距离

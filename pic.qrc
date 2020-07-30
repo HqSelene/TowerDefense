@@ -51,5 +51,15 @@
         <file>picture/enemy/5/10_02.png</file>
         <file>picture/enemy/5/10_03.png</file>
         <file>picture/enemy/5/10_04.png</file>
+        <file>picture/Weapon/dead_warning.png</file>
+        <file>picture/enemy/backToBlood.png</file>
+        <file>picture/enemy/Enemy.txt</file>
+        <file>picture/enemy/SpeedUp.png</file>
+        <file>picture/bad_end.jpg</file>
+        <file>picture/happy_end.jpg</file>
+        <file>picture/music/415209__inspectorj__cat-screaming-a.wav</file>
+        <file>picture/music/466133__humanoide9000__victory-fanfare.wav</file>
+        <file>picture/map/map2.png</file>
+        <file>picture/map/map3.png</file>
     </qresource>
 </RCC>

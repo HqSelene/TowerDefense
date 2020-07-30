@@ -25,7 +25,6 @@ class enemy:public Object
 {
 public:
     enemy(int num);
-
     void show(QPainter* painter);
     void attack(double bl);//受到攻击
     void setObject(int st);//移动过程中不断的走
@@ -42,20 +41,17 @@ public:
     void setPath(){nowPath++;}
     bool win;
 
-    void SetSkill();
     void CoolDown();
 
 private:
-    int Miss;//判断是否躲避成功
+    Blood* blood;
+protected:
     int attackAbility;//攻击能力
     int coin;//被杀死之后可以得到的金币
     int nowPath;//目前所在道路
     double speed;
     double fullBlood,nowBlood;//设置血量
-
     bool damage;
-    Blood* blood;
-
     double cooldown;
     bool skillReady;
     double skillInterval;

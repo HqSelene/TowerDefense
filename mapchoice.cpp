@@ -69,3 +69,16 @@ void MapChoice::on_pushButton_3_clicked()
     connect(attMap,SIGNAL(sendsignal()),this,SLOT(reshow()));
     attMap->show();
 }
+
+void MapChoice::on_pushButton_4_clicked()
+{
+    background->stop();
+    button->play();
+    this->hide();
+    QMessageBox message(QMessageBox::NoIcon, "Ready for Round THREE", "Last war of destiny!Are you ready?");
+    message.setIconPixmap(QPixmap("://picture/cat2.png"));
+    message.exec();
+    attMap=new gaming(3);
+    connect(attMap,SIGNAL(sendsignal()),this,SLOT(reshow()));
+    attMap->show();
+}
